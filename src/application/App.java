@@ -17,7 +17,8 @@ public class App {
         //boolean saida = strC.xyBalance(str);
         //String saida = strC.mixString(a,b);
         //String saida = strC.repeatEnd(str, n);
-        String saida = strC.repeatFront(str, n);
+        //String saida = strC.repeatFront(str, n);
+        String saida = strC.repeatSeparator("This", "And", 1);
 
         System.out.println(saida);
 

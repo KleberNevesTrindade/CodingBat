@@ -193,8 +193,12 @@ public class String2 {
   repeatSeparator("This", "And", 1) → "This"
   */
   public String repeatSeparator(String word, String sep, int count) {
-    
-    return "";
+    String saida = "";
+    if (count <= 0) return "";
+    for (int i = 1; i < count; i++) {
+      saida = saida + word + sep;
+    }
+    return saida + word;
   }
 
 
