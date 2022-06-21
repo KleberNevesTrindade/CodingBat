@@ -201,5 +201,76 @@ public class String2 {
     return saida + word;
   }
 
+  /*
+  Given a string, consider the prefix string made of the first N chars of the string.
+  Does that prefix string appear somewhere else in the string?
+  Assume that the string is not empty and
+  that N is in the range 1..str.length().
+
+  prefixAgain("abXYabc", 1) → true
+  prefixAgain("abXYabc", 2) → true
+  prefixAgain("abXYabc", 3) → false
+  */
+  public boolean prefixAgain(String str, int n) {
+    String teste = str.substring(0, n);
+    int len = str.length();
+    for (int i = n;i < len; i++) {
+      if (i + n > len) return false;
+      if (teste.equals(str.substring(i, i + n))) return true;
+    }
+    return false;
+  }
+  
+  /*
+  Given a string, does "xyz" appear in the middle of the string?
+  To define middle, 
+  we'll say that the number of chars to the left and right of the "xyz" 
+  must differ by at most one. 
+  This problem is harder than it looks.
+
+  xyzMiddle("AAxyzBB") → true
+  xyzMiddle("AxyzBB") → true
+  xyzMiddle("AxyzBBB") → false
+  xyzMiddle("xyzAxyzBBB") → true
+  xyzMiddle("xyzAxyzBxyz") → true
+  xyzMiddle("xyzxyzAxyzBxyzxyz") → true
+  xyzMiddle("xyzxyzxyzBxyzxyz") → true
+  xyzMiddle("xyzxyzAxyzxyzxyz") → true
+ */
+  public boolean xyzMiddle(String str) {
+    final String teste = "xyz"; 
+
+    int len = str.length();
+    if (len == 0) return false;
+    int mid = (len / 2) - 2;
+
+    int pos = str.indexOf(teste, mid);
+    if (pos < 0) return false;
+
+    int lEsq = pos;
+    int lDir = len - pos - teste.length();
+
+    if (lEsq == lDir) return true;
+    if (lEsq - 1 == lDir) return true;
+    if (lEsq == lDir - 1) return true;
+
+    return false;
+  }
+
+  /*
+  A sandwich is two pieces of bread with something in between.
+  Return the string that is between the first and
+  last appearance of "bread"in the given string,
+  or return the empty string "" if there are not two pieces of bread.
+
+  getSandwich("breadjambread") → "jam"
+  getSandwich("xxbreadjambreadyy") → "jam"
+  getSandwich("xxbreadyy") → ""
+  */
+  public String getSandwich(String str) {
+  
+    return "";
+  }
+  
 
 }

@@ -9,8 +9,8 @@ public class App {
         Ui.clearScreen();
 
         String2 strC = new String2(); 
-        String str = "Java";
-        int n = 4;
+        String str = "xyz";
+        int n = 1;
 
         //boolean saida = strC.xyzThere(str);
         //boolean saida = strC.bobThere(str);
@@ -18,7 +18,10 @@ public class App {
         //String saida = strC.mixString(a,b);
         //String saida = strC.repeatEnd(str, n);
         //String saida = strC.repeatFront(str, n);
-        String saida = strC.repeatSeparator("This", "And", 1);
+        //String saida = strC.repeatSeparator("This", "And", 1);
+        //boolean saida = strC.prefixAgain(str, n);
+
+        boolean saida = strC.xyzMiddle(str);    
 
         System.out.println(saida);
 
