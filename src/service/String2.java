@@ -261,16 +261,92 @@ public class String2 {
   A sandwich is two pieces of bread with something in between.
   Return the string that is between the first and
   last appearance of "bread"in the given string,
-  or return the empty string "" if there are not two pieces of bread.
+  or return the empty string "" 
+  if there are not two pieces of bread.
 
   getSandwich("breadjambread") → "jam"
   getSandwich("xxbreadjambreadyy") → "jam"
   getSandwich("xxbreadyy") → ""
+  getSandwich("xxbreadbreadjambreadyy") → "breadjam"
+  getSandwich("breadbreadbreadbread") → "breadbread"
   */
   public String getSandwich(String str) {
-  
-    return "";
+    final String chave = "bread";
+    String saida = "";
+
+    int len = str.length();
+    int lChave = chave.length();
+    
+    int pos1 = str.indexOf(chave);
+    if ((pos1 < 0) || (pos1 + lChave > len)) return "";
+    
+    int pos2 = str.lastIndexOf(chave); // str.indexOf(chave, pos1 + 1);
+    if (pos2 < 0 || pos2 == pos1) return "";
+
+    saida = str.substring(pos1 + lChave, pos2);
+    return saida;
+
   }
   
+  /*
+  Returns true if for every '*' (star) in the string,
+  if there are chars both immediately before and after the star,
+  they are the same.
+
+  sameStarChar("xy*yzz") → true
+  sameStarChar("xy*zzz") → false
+  sameStarChar("*xa*az") → true
+  sameStarChar("12*2*3*") → false
+  sameStarChar("XY*YYYY*Z*") → false
+  sameStarChar("12*2*3*") → false
+  sameStarChar("*xa*a*b") → false
+
+  sameStarChar("**") → true
+  */
+  public boolean sameStarChar(String str) {
+    final String chave = "*";
+    boolean teste = false;
+    int len = str.length();
+    if (str.isEmpty()) return true;
+    if (str.equals(chave)) return true;
+    if (str.substring(len - 1).equals(chave)) return false;
+
+    int pos = str.indexOf(chave);
+    while (pos >= 0) {
+      if (pos + 1 >= len) return false;
+      if (pos != 0 && str.substring(pos - 1, pos).equals(str.substring(pos + 1, pos + 2))) {
+        teste = true;
+      }
+      else {
+        teste = false;
+      }
+      pos = str.indexOf(chave, pos + 1);
+    }
+
+    if (teste) {
+      return true;
+    } 
+    else {
+      return false;
+    }
+  }
+
+  /*
+  Given a string, 
+  compute a new string by moving the first char to come after the next two chars,
+  so "abc" yields "bca".
+  Repeat this process for each subsequent group of 3 chars, 
+  so "abcdef" yields "bcaefd". 
+  Ignore any group of fewer than 3 chars at the end.
+
+  oneTwo("abc") → "bca"
+  oneTwo("tca") → "cat"
+  oneTwo("tcagdo") → "catdog"
+ */
+  public String oneTwo(String str) {
+    
+    
+    return "";
+  }
 
 }

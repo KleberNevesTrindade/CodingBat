@@ -20,8 +20,10 @@ public class App {
         //String saida = strC.repeatFront(str, n);
         //String saida = strC.repeatSeparator("This", "And", 1);
         //boolean saida = strC.prefixAgain(str, n);
-
-        boolean saida = strC.xyzMiddle(str);    
+        //boolean saida = strC.xyzMiddle(str);    
+        //String saida = strC.getSandwich("breadbreadbreadbread");
+        //boolean saida = strC.sameStarChar("*");
+        String saida = strC.oneTwo(str);
 
         System.out.println(saida);
 
