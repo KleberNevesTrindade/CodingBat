@@ -9,12 +9,11 @@ public class App {
         
         Ui.clearScreen();
 
-        Testes tt = new Testes();
         
-        int ii = tt.teste02();
 
-        System.out.println(ii);
-
+        //Testes tt = new Testes();
+        //int ii = tt.teste02();
+        //System.out.println(ii);
 
         //String2 strC = new String2(); 
         //String str = "xyz";
@@ -34,8 +33,6 @@ public class App {
         //String saida = strC.oneTwo(str);
 
         //System.out.println(saida);
-
-        
 
     }
 }
