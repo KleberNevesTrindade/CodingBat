@@ -51,14 +51,55 @@ public class Array2 {
     centeredAverage([1, 2, 3, 4, 100]) → 3
     centeredAverage([1, 1, 5, 5, 10, 8, 7]) → 5
     centeredAverage([-10, -4, -2, -4, -2, 0]) → -3
+    centeredAverage([100, 0, 5, 3, 4]) → 4
+    centeredAverage([4, 0, 100]) → 4
+    centeredAverage([1000, 0, 1, 99]) → 50
+    centeredAverage([6, 4, 8, 12, 3]) → 6
+    centeredAverage([4, 4, 4, 1, 5]) → 4
      */
     public int centeredAverage(int[] nums) {
+        int soma = nums[0];
         int len = nums.length;
-        if (len%2 != 0) return nums[len/2];
-        return (nums[(len/2)-1] + nums[len/2])/2;
+        int vMax = nums[0];
+        int vMin = nums[0];
+        for (int i=1; i<len; i++){
+            if (vMax < nums[i]) {
+                vMax = nums[i];
+            }
+            if (vMin > nums[i]) {
+                vMin = nums[i];
+            }
+ 
+            soma += nums[i];
+        }
+        return (soma - vMax - vMin) / (len - 2);
+        
     }
+
+    /*
+    Return the sum of the numbers in the array, 
+    returning 0 for an empty array. 
+    Except the number 13 is very unlucky, 
+    so it does not count and numbers that come immediately after a 13 also do not count.
+
+    sum13([1, 2, 2, 1]) → 6
+    sum13([1, 1]) → 2
+    sum13([1, 2, 2, 1, 13]) → 6
+    */
+    public int sum13(int[] nums) {
+        int saida = 0;
+        int len = nums.length;
+        if (len == 0) return 0;
+        for (int i=0; i<len; i++){
+            if (nums[i] != 13) {
+                saida += nums[i];
+            }
+            else {
+                i++;
+            }
+        }
+        return saida;
+    }
+      
     
-
-
-
 }

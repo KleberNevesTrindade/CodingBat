@@ -1,5 +1,6 @@
 package application;
 
+import service.Array2;
 import service.String2;
 import service.Ui;
 import service.Testes;
@@ -18,7 +19,7 @@ public class App {
         //String2 strC = new String2(); 
         //String str = "xyz";
         //int n = 1;
-
+        
         //boolean saida = strC.xyzThere(str);
         //boolean saida = strC.bobThere(str);
         //boolean saida = strC.xyBalance(str);
@@ -32,7 +33,13 @@ public class App {
         //boolean saida = strC.sameStarChar("*");
         //String saida = strC.oneTwo(str);
 
-        //System.out.println(saida);
+        Array2 arr = new Array2();
+        int[] entrada = new int[]{1, 2, 3, 4, 100};
+        int saida = arr.centeredAverage(entrada);
 
+        System.out.println(saida);
+
+
+        
     }
 }
