@@ -101,5 +101,65 @@ public class Array2 {
         return saida;
     }
       
+    /*
+    Array-2 > sum67
+    Return the sum of the numbers in the array, 
+    except ignore sections of numbers starting with a 6 
+    and extending to the next 7 (every 6 will be followed by at least one 7). 
+    Return 0 for no numbers.
+
+    sum67([1, 2, 2]) → 5
+    sum67([1, 2, 2, 6, 99, 99, 7]) → 5
+    sum67([1, 1, 6, 7, 2]) → 4
+    sum67([1, 6, 2, 2, 7, 1, 6, 99, 99, 7]) → 2
+    sum67([2, 7, 6, 2, 6, 7, 2, 7]) → 18
+    sum67([2, 7, 6, 2, 6, 2, 7]) → 9
+    sum67([1, 6, 7, 7]) → 8		
+    sum67([6, 7, 1, 6, 7, 7]) → 8	
+    sum67([6, 8, 1, 6, 7]) → 0	
+    sum67([]) → 0
+    sum67([6, 7, 11]) → 11	
+    sum67([11, 6, 7, 11]) → 22
+    sum67([2, 2, 6, 7, 7]) → 11
+     */
+    public int sum67(int[] nums) {
+        int len = nums.length;
+        int soma = 0;
+        for (int i=0; i<len; i++){
+            if (nums[i] == 6) {
+                for (int j=i+1; j<len; j++){
+                    if (nums[j]==7) {
+                        i = j+1;
+                        break;
+                    }
+                }
+            }
+            if (i < len) {
+                soma += nums[i];
+            }
+        }
+        return soma;    
+    }
+        
+    /*
+    Given an array of ints, 
+    return true if the array contains a 2 next to a 2 somewhere.
+
+    has22([1, 2, 2]) → true
+    has22([1, 2, 1, 2]) → false
+    has22([2, 1, 2]) → false
+    */ 
+    public boolean has22(int[] nums) {
+        int len = nums.length;
+        for (int i=0; i<len; i++){
+          if (i+1 < len && nums[i] == 2 && nums[i+1] == 2) return true;
+        }
+        return false;
+ 
+        
+      }
+      
     
+
+
 }

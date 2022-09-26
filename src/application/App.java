@@ -1,17 +1,13 @@
 package application;
 
-import service.Array2;
-import service.String2;
+import service.Logic2;
 import service.Ui;
-import service.Testes;
 
 public class App {
     public static void main(String[] args) {
         
         Ui.clearScreen();
-
-        
-
+     
         //Testes tt = new Testes();
         //int ii = tt.teste02();
         //System.out.println(ii);
@@ -33,9 +29,12 @@ public class App {
         //boolean saida = strC.sameStarChar("*");
         //String saida = strC.oneTwo(str);
 
-        Array2 arr = new Array2();
-        int[] entrada = new int[]{1, 2, 3, 4, 100};
-        int saida = arr.centeredAverage(entrada);
+        //Array2 arr = new Array2();
+        //int[] entrada = new int[]{1, 2, 2, 6, 99, 99, 7};
+        //int saida = arr.sum67(entrada);
+
+        Logic2 logic2 = new Logic2();
+        int saida = logic2.makeChocolate(4, 1, 7);
 
         System.out.println(saida);
 
