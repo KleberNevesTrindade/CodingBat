@@ -17,12 +17,23 @@ public class Logic2 {
     makeChocolate(4, 1, 5) → 0
     makeChocolate(5, 4, 9) → 4
     makeChocolate(7, 1, 12) → 7
-    makeChocolate(7, 1, 12) → 7
+    --
+    makeChocolate(1, 2, 7) → -1
     */
     public int makeChocolate(int small, int big, int goal) {
-        int resto = goal % (big * 5);
-        if (resto == 0 || resto > small) return -1;
-        return resto;
+        
+        if (goal > (big * 5) + small) return -1;
+        
+        do {
+            if (goal - 5 == 0) return 0;
+            if (goal - 5 > 0) goal = goal - 5;
+            big--;
+        } while (big > 0);
+
+        goal = goal - small;
+        if (goal < 0) return small + goal;
+        if (goal > 0) return -1;
+        return small;
     }
     
 }

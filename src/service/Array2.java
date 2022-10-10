@@ -155,8 +155,6 @@ public class Array2 {
           if (i+1 < len && nums[i] == 2 && nums[i+1] == 2) return true;
         }
         return false;
- 
-        
       }
       
     

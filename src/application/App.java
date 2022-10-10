@@ -34,11 +34,17 @@ public class App {
         //int saida = arr.sum67(entrada);
 
         Logic2 logic2 = new Logic2();
-        int saida = logic2.makeChocolate(4, 1, 7);
+        //int saida = logic2.makeChocolate(4, 1, 7);
+ 
+        System.out.println(logic2.makeChocolate(4, 1, 9));
+        System.out.println(logic2.makeChocolate(4, 1, 10));
+        System.out.println(logic2.makeChocolate(4, 1, 7));
+        System.out.println(logic2.makeChocolate(6, 2, 7));
+        System.out.println(logic2.makeChocolate(4, 1, 5));
+        System.out.println(logic2.makeChocolate(5, 4, 9));
+        System.out.println(logic2.makeChocolate(7, 1, 12));
+        System.out.println("----");
+        System.out.println(logic2.makeChocolate(1, 2, 7));
 
-        System.out.println(saida);
-
-
-        
     }
 }
