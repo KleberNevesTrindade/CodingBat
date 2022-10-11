@@ -1,5 +1,7 @@
 package service;
 
+import javax.xml.validation.Validator;
+
 public class Array2 {
 
     /*
@@ -157,7 +159,127 @@ public class Array2 {
         return false;
       }
       
+    /*  Given an array of ints, return true if it contains no 1's or it contains no 4's.
+        no14([1, 2, 3]) → true
+        no14([1, 2, 3, 4]) → false
+        no14([2, 3, 4]) → true
+    */
+
+    public boolean no14(int[] nums) {
+  
+        boolean c1 = false;
+        boolean c4 = false;
+        for (int i = 0; i<nums.length; i++) {
+            if (nums[i] == 1) c1 = true;
+            if (nums[i] == 4) c4 = true;
+        }
+        if (!c1 || !c4) return true;
+        return false;
+
+    }
+    /*
+        We'll say that a value is "everywhere" in an array if for every pair of adjacent elements in the array, 
+        at least one of the pair is that value. 
+        Return true if the given value is everywhere in the array.
+
+        isEverywhere([1, 2, 1, 3], 1) → true
+        isEverywhere([1, 2, 1, 3], 2) → false
+        isEverywhere([1, 2, 1, 3, 4], 1) → false
+    */
+    public boolean isEverywhere(int[] nums, int val) {
+        int len=nums.length;
+        if (len<=1) return true;
+        
+        boolean resp = false;
+        for (int i=1; i<nums.length; i++){
+            if (nums[i-1]==val || nums[i]==val) {
+              resp = true;
+            } else {
+              return false;
+            }
+        }
+        return resp;
+
+    }
+
+    /*
+    Given an array of ints, 
+    return true if the array contains a 2 next to a 2 or a 4 next to a 4, 
+    but not both.
+
+    either24([1, 2, 2]) → true
+    either24([4, 4, 1]) → true
+    either24([4, 4, 1, 2, 2]) → false
+    */
+    public boolean either24(int[] nums) {
+        boolean v2 = false;
+        boolean v4 = false;
+        for (int i=1; i<nums.length; i++){
+            if (nums[i-1]==2 && nums[i]==2) v2 = true;
+            if (nums[i-1]==4 && nums[i]==4) v4 = true;
+        }
+        return v2 ^ v4;
+    }
+    /*
+    Given arrays nums1 and nums2 of the same length, 
+    for every element in nums1, consider the corresponding element in nums2 (at the same index).
+    Return the count of the number of times that the two elements differ by 2 or less, 
+    but are not equal.
+
+    matchUp([1, 2, 3], [2, 3, 10]) → 2
+    matchUp([1, 2, 3], [2, 3, 5]) → 3
+    matchUp([1, 2, 3], [2, 3, 3]) → 2
+     */
+    public int matchUp(int[] nums1, int[] nums2) {
+        int resp = 0;
+        int sub;
+        for (int i=0; i<nums1.length; i++){
+            sub = Math.abs(nums1[i] - nums2[i]);
+            if (sub > 0 && sub <= 2){
+                resp++;
+            }
+        }
+        return resp;
+    }
+    /*
+    Given an array of ints, return true if the array contains two 7's next to each other, 
+    or there are two 7's separated by one element, 
+    such as with {7, 1, 7}.
+
+    has77([1, 7, 7]) → true
+    has77([1, 7, 1, 7]) → true
+    has77([1, 7, 1, 1, 7]) → false
+    */
+    public boolean has77(int[] nums) {
+        if (nums.length<=1) return false;
+        for (int i=2; i<nums.length; i++){
+            if (nums[i-2]==7 && nums[i-1]==7) return true;
+            if (nums[i-2]==7 && nums[i]==7) return true;
+            if (nums[i-1]==7 && nums[i]==7) return true;
+        }
+        return false;
+    }
+    /*
+    Given an array of ints, 
+    return true if there is a 1 in the array with a 2 somewhere later in the array.
+
+    has12([1, 3, 2]) → true
+    has12([3, 1, 2]) → true
+    has12([3, 1, 4, 5, 2]) → true
+     */
+    public boolean has12(int[] nums) {
+        int len = nums.length;
+        for (int i=1; i<len; i++){
+            if (nums[i-1]==1) {
+                for (int j=i; j<len; j++){
+                    if(nums[j]==2) return true;
+                }
+            }
+        }   
+        return false;
+    }
     
+
 
 
 }

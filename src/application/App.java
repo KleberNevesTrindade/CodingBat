@@ -29,13 +29,8 @@ public class App {
         //boolean saida = strC.sameStarChar("*");
         //String saida = strC.oneTwo(str);
 
-        //Array2 arr = new Array2();
-        //int[] entrada = new int[]{1, 2, 2, 6, 99, 99, 7};
-        //int saida = arr.sum67(entrada);
-
-        Logic2 logic2 = new Logic2();
-        //int saida = logic2.makeChocolate(4, 1, 7);
- 
+  /*      Logic2 logic2 = new Logic2();
+   
         System.out.println(logic2.makeChocolate(4, 1, 9));
         System.out.println(logic2.makeChocolate(4, 1, 10));
         System.out.println(logic2.makeChocolate(4, 1, 7));
@@ -45,6 +40,14 @@ public class App {
         System.out.println(logic2.makeChocolate(7, 1, 12));
         System.out.println("----");
         System.out.println(logic2.makeChocolate(1, 2, 7));
+*/
+
+        //Array2 arr = new Array2();
+        //int[] entrada = new int[]{1, 2, 2, 6, 99, 99, 7};
+        //int saida = arr.sum67(entrada);
+
+   
+
 
     }
 }
